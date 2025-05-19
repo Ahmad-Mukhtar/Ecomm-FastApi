@@ -1,4 +1,4 @@
-# 🛍️ E-Commerce API
+#  E-Commerce API
 
 A simple FastAPI-based backend service for managing an e-commerce system. It handles products, inventory, and sales.
 
