@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS inventory (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
     quantity INT NOT NULL,
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
@@ -20,6 +21,10 @@ CREATE TABLE IF NOT EXISTS sales (
     sale_date DATE NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
+
+CREATE INDEX idx_sales_product_id ON sales (product_id);
+CREATE INDEX idx_sales_sale_date ON sales (sale_date);
+
 
 -- Insert sample data
 INSERT INTO products (name, category, price) VALUES

@@ -30,3 +30,5 @@ def populate_demo_data():
 
     conn.commit()
     conn.close()
+
+populate_demo_data()

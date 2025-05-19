@@ -13,3 +13,11 @@ def create_product(product: Product):
     conn.commit()
     conn.close()
     return {"message": "Product created"}
+@router.get("/")
+def get_product():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM products")
+    data = cursor.fetchall()
+    conn.close()
+    return data
