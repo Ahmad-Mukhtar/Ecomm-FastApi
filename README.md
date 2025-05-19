@@ -41,7 +41,7 @@ pip install -r requirements.txt
 ### 3. Run the app
 
 ```bash
-uvicorn ecomm.main:app --reload
+uvicorn ecomm.main:app
 ```
 
 ### 4. Run the Demo Data Script
